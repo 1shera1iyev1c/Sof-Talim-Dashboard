@@ -1,6 +1,6 @@
 import React, { useContext, useRef } from "react";
 import "./Dashboard.scss";
-import logo from "./../../Assets/Images/logo.svg";
+import logo from "./../../Assets/Images/logo.png";
 import { AuthContext } from "../../Context/Auth-Context";
 
 export const Dashboard = () => {

@@ -1,0 +1,124 @@
+#header__dark {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    background: rgba(5, 49, 206, 0.478);
+    transition: all 0.5s cubic-bezier(0.17, 0.17, 0.24, 1);
+  }
+  #header__light {
+    transition: all 0.5s cubic-bezier(0.17, 0.17, 0.24, 1);
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+    backdrop-filter: blur(20px);
+  }
+  .conteiner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .header__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header__list {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+  }
+  .header__item {
+    margin-right: 30px;
+  }
+  .header__item:last-child {
+    margin-right: 0;
+  }
+  .header__link--dark {
+    color: #fff;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 700;
+    display: block;
+  }
+  .header__link--light {
+    color: rgb(8, 8, 147);
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 700;
+    display: block;
+  }
+  .header__link--dark:hover {
+    border-bottom: 2px solid rgb(255, 255, 255);
+    color: #fff;
+    padding-bottom: 5px;
+    transition: 0.5s ease all;
+  }
+  .header__link--dark:active {
+    transition: none;
+    border: none;
+    color: orange;
+  }
+  .header__link--light:hover {
+    border-bottom: 2px solid rgb(25, 0, 255);
+    padding-bottom: 5px;
+    transition: 0.5s ease all;
+  }
+  .header__link--light:active {
+    transition: none;
+    border: none;
+    color: orange;
+  }
+  .burger__btn {
+    display: none;
+  }
+  
+  @media screen and (max-width: 1070px) {
+    .header__item {
+      margin-right: 20px;
+    }
+  }
+  @media screen and (max-width: 993px) {
+    .header__link--dark{
+      font-size: 12px;
+    }
+    .header__link--light{
+      font-size: 12px;
+    }
+    .header__item {
+      margin-right: 30px;
+    }
+  }
+  @media screen and (max-width: 930px) {
+    .header__link--dark {
+      font-size: 11px;
+    }
+    .header__link--light {
+      font-size: 11px;
+    }
+    .header__item {
+      margin-right: 10px;
+    }
+  }
+  
+  @media screen and (max-width: 770px) {
+    .header__link--dark {
+      font-size: 10px;
+    }
+    .header__link--light {
+      font-size: 10px;
+    }
+  }
+  @media screen and (max-width: 500px) {
+    .header__list {
+      display: none;
+    }
+    .burger__btn {
+      display: block;
+    }
+  }
+  
