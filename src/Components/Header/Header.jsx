@@ -35,7 +35,7 @@ export function Header() {
         <ul className="header__list" data-aos="fade-up">
           <li className="header__item">
             <Link className={`header__link--${theme}`} to="/">
-              {Language[lang].header.Home}
+              {Language[lang].header.Admins}
             </Link>
           </li>
           <li className="header__item">
@@ -60,13 +60,7 @@ export function Header() {
           </li>
           <li className="header__item">
             <Link className={`header__link--${theme}`} to="/instructor">
-              {Language[lang].header.Instructor}
-            </Link>
-          </li>
-          <li className="header__item">
-            <Link className={`header__link--${theme}`} to="/contact">
-              {Language[lang].header.Contact}
-              {Language[lang].header.Contact2}
+              {Language[lang].header.Result}
             </Link>
           </li>
         </ul>
