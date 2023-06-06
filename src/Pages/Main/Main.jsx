@@ -1,20 +1,19 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Admins } from "../Admins";
+import { About } from "../About";
 import { Dashboard, Header } from "../../Components";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
+import { Teachers } from "../Teachers/Teachers";
 
 export function Main() {
-
-  const navigate = useNavigate();
-    useEffect(() => {
-    navigate("/admins");
-  }, [navigate]);
 
   return (
     <>
     <Header />
       <Routes>
         <Route path="/admins" element={<Admins />} />
+        <Route path="/teachers" element={<Teachers />} />
+        <Route path="/about" element={<About />} />
         <Route path="/login" element={<Dashboard />} />
       </Routes>
     </>

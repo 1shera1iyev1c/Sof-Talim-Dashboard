@@ -5,11 +5,23 @@ export const Language = {
       Courses: "Kurslar",
       About: "Biz haqimizda",
       Teachers: "Ustozlar",
-      Profile: "News",
+      News: "Yangiliklar",
       Result: "Natijalar",
       Dark: "Tun",
       Light: "Kun",
     },
+    Table: {
+      Name: "Ism & Familiya",
+      Subject: "Fan",
+      Login: "Login",
+      Pass: "Parol",
+      Info: "Ma'lumot",
+      Tel: "Telefon raqam",
+      CrAdmin: "Admin yaratish",
+      CrTeacher: "Ustoz yaratish",
+      Submit: "Jo'natish",
+      Close: "Yopish"
+    }
   },
   eng: {
     header: {
@@ -17,11 +29,23 @@ export const Language = {
       Courses: "Courses",
       Teachers: "Teachers",
       About: "About",
-      Profile: "Profile",
+      News: "News",
       Result: "Results",
       Dark: "Dark",
       Light: "Light",
     },
+    Table: {
+      Name: "Name & Surname",
+      Subject: "Subject",
+      Login: "Login",
+      Pass: "Password",
+      Info: "Information",
+      Tel: "Phone number",
+      CrAdmin: "Create Admin",
+      CrTeacher: "Create Teacher",
+      Submit: "Submit",
+      Close: "Close"
+    }
   },
   rus: {
     header: {
@@ -29,10 +53,22 @@ export const Language = {
       Courses: "Курсы",
       Teachers: "Учители",
       About: "О нас",
-      Profile: "Профиль",
+      News: "Новости",
       Result: "Результаты",
       Dark: "День",
       Light: "Ночь",
     },
+    Table: {
+      Name: "Имя & Фамилия",
+      Subject: "Предмет",
+      Login: "Логин",
+      Pass: "Пароль",
+      Info: "Информация",
+      Tel: "Номер телефона",
+      CrAdmin: "Создать админ",
+      CrTeacher: "Создать учителя",
+      Submit: "Отправить",
+      Close: "Закрывать"
+    }
   },
 };
