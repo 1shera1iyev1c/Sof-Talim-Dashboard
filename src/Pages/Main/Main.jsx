@@ -4,6 +4,7 @@ import { About } from "../About";
 import { Dashboard, Header } from "../../Components";
 import { Route, Routes } from "react-router-dom";
 import { Teachers } from "../Teachers/Teachers";
+import { Courses } from "../Courses";
 
 export function Main() {
 
@@ -11,6 +12,7 @@ export function Main() {
     <>
     <Header />
       <Routes>
+        <Route path="/courses" element={<Courses />} />
         <Route path="/admins" element={<Admins />} />
         <Route path="/teachers" element={<Teachers />} />
         <Route path="/about" element={<About />} />

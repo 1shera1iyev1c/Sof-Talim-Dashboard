@@ -21,6 +21,15 @@ export const Language = {
       CrTeacher: "Ustoz yaratish",
       Submit: "Jo'natish",
       Close: "Yopish"
+    },
+    coursTable: {
+      
+      Subject: "Fan",
+      About: "Ma'lumot",
+      Continuity: "Kurs davomiyligi",
+      Price: "Kurs narxi",
+      CrAdmin: "Fan qoshish"
+      
     }
   },
   eng: {
@@ -45,6 +54,15 @@ export const Language = {
       CrTeacher: "Create Teacher",
       Submit: "Submit",
       Close: "Close"
+    },
+    coursTable: {
+      
+      Subject: "Subject",
+      About: "Information",
+      Continuity: "Course duration",
+      Price: "Cours price",
+      CrAdmin: "Add subject"
+      
     }
   },
   rus: {
@@ -69,6 +87,15 @@ export const Language = {
       CrTeacher: "Создать учителя",
       Submit: "Отправить",
       Close: "Закрывать"
+    },
+    coursTable: {
+      
+      Subject: "Предмет",
+      About: "Информация",
+      Continuity: "Длительность курса",
+      Price: "Стоимость курса",
+      CrAdmin: "Добавить предмет"
+      
     }
   },
 };
