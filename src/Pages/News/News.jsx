@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import './Teachers.scss'
+import './News.scss'
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { LangContext } from "../../Context/Lang-Context";
 import { Language } from "../../Assets/Language/Language";
 
-export function Teachers() {
+export function News() {
 
   const { lang } = useContext(LangContext);
 
@@ -13,27 +13,24 @@ export function Teachers() {
     Aos.init({ duration: 1500 });
   }, []);
 
-  const [teachers, setTeachers] = useState([])
+  const [news, setNews] = useState([])
 
   const ismRef = useRef()
-  const subRef = useRef()
   const infoRef = useRef()
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
 
-    const newTeacher = {
-      id: teachers.at(0)?.id ? teachers.at(0)?.id + 1 : 1,
+    const newNews = {
+      id: news.at(0)?.id ? news.at(0)?.id + 1 : 1,
       ism: ismRef.current.value,
-      sub: subRef.current.value,
       info: infoRef.current.value,
     }
 
     ismRef.current.value = ""
-    subRef.current.value = ""
     infoRef.current.value = ""
 
-    setTeachers([...teachers, newTeacher])
+    setNews([...news, newNews])
   }
   return (
     <div className='admins'>
@@ -41,23 +38,21 @@ export function Teachers() {
         <table id="customers">
           <thead>
             <tr>
-              <th>{Language[lang].Table.Name}</th>
-              <th>{Language[lang].Table.Subject}</th>
+              <th>{Language[lang].Table.Title}</th>
               <th>{Language[lang].Table.Info}</th>
             </tr>
           </thead>
           {
-            teachers.length > 0 && <tbody>
-              {teachers.map(teacher => <tr key={teacher.id}>
-                <td>{teacher.id}. {teacher.ism}</td>
-                <td>{teacher.sub}</td>
-                <td>{teacher.info}</td>
+            news.length > 0 && <tbody>
+              {news.map(item => <tr key={item.id}>
+                <td>{item.id}. {item.ism}</td>
+                <td>{item.info}</td>
               </tr>)}
             </tbody>
           }
         </table>
         <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          {Language[lang].Table.CrTeacher}
+          {Language[lang].Table.CrNews}
         </button>
       </div>
 
@@ -72,12 +67,8 @@ export function Teachers() {
             <div className="modal-body">
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
-                  <label htmlFor="exampleInputIsm" className="form-label">{Language[lang].Table.Name}</label>
+                  <label htmlFor="exampleInputIsm" className="form-label">{Language[lang].Table.Title}</label>
                   <input ref={ismRef} type="text" autoComplete='off' className="form-control" id="exampleInputIsm" aria-describedby="emailHelp" />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="exampleInputEmail1" className="form-label">{Language[lang].Table.Subject}</label>
-                  <input ref={subRef} type="text" autoComplete='off' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="exampleInputPassword1" className="form-label">{Language[lang].Table.Info}</label>

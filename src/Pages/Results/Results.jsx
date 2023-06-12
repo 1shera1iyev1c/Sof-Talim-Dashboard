@@ -1,11 +1,11 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
-import './Teachers.scss'
+import './Results.scss'
 import Aos from "aos";
 import "aos/dist/aos.css";
 import { LangContext } from "../../Context/Lang-Context";
 import { Language } from "../../Assets/Language/Language";
 
-export function Teachers() {
+export function Results() {
 
   const { lang } = useContext(LangContext);
 
@@ -13,27 +13,30 @@ export function Teachers() {
     Aos.init({ duration: 1500 });
   }, []);
 
-  const [teachers, setTeachers] = useState([])
+  const [results, setResults] = useState([])
 
   const ismRef = useRef()
-  const subRef = useRef()
-  const infoRef = useRef()
+  const dirRef = useRef()
+  const sucRef = useRef()
+  const resRef = useRef()
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
 
-    const newTeacher = {
-      id: teachers.at(0)?.id ? teachers.at(0)?.id + 1 : 1,
+    const newResults = {
+      id: results.at(0)?.id ? results.at(0)?.id + 1 : 1,
       ism: ismRef.current.value,
-      sub: subRef.current.value,
-      info: infoRef.current.value,
+      dir: dirRef.current.value,
+      suc: sucRef.current.value,
+      res: resRef.current.value,
     }
 
     ismRef.current.value = ""
-    subRef.current.value = ""
-    infoRef.current.value = ""
+    dirRef.current.value = ""
+    sucRef.current.value = ""
+    resRef.current.value = ""
 
-    setTeachers([...teachers, newTeacher])
+    setResults([...results, newResults])
   }
   return (
     <div className='admins'>
@@ -42,22 +45,24 @@ export function Teachers() {
           <thead>
             <tr>
               <th>{Language[lang].Table.Name}</th>
-              <th>{Language[lang].Table.Subject}</th>
-              <th>{Language[lang].Table.Info}</th>
+              <th>{Language[lang].Table.Direction}</th>
+              <th>{Language[lang].header.Result}</th>
+              <th>{Language[lang].Table.Success}</th>
             </tr>
           </thead>
           {
-            teachers.length > 0 && <tbody>
-              {teachers.map(teacher => <tr key={teacher.id}>
+            results.length > 0 && <tbody>
+              {results.map(teacher => <tr key={teacher.id}>
                 <td>{teacher.id}. {teacher.ism}</td>
-                <td>{teacher.sub}</td>
-                <td>{teacher.info}</td>
+                <td>{teacher.dir}</td>
+                <td>{teacher.suc}</td>
+                <td>{teacher.res}</td>
               </tr>)}
             </tbody>
           }
         </table>
         <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          {Language[lang].Table.CrTeacher}
+          {Language[lang].Table.CrResult}
         </button>
       </div>
 
@@ -76,12 +81,16 @@ export function Teachers() {
                   <input ref={ismRef} type="text" autoComplete='off' className="form-control" id="exampleInputIsm" aria-describedby="emailHelp" />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="exampleInputEmail1" className="form-label">{Language[lang].Table.Subject}</label>
-                  <input ref={subRef} type="text" autoComplete='off' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  <label htmlFor="exampleInputEmail1" className="form-label">{Language[lang].Table.Direction}</label>
+                  <input ref={dirRef} type="text" autoComplete='off' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="exampleInputPassword1" className="form-label">{Language[lang].Table.Info}</label>
-                  <input ref={infoRef} type="text" autoComplete='off' className="form-control" id="exampleInputPassword1" />
+                  <label htmlFor="exampleInputPassword1" className="form-label">{Language[lang].Table.Success}</label>
+                  <input ref={sucRef} type="text" autoComplete='off' className="form-control" id="exampleInputPassword1" />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="exampleInputPassword1" className="form-label">{Language[lang].header.Result}</label>
+                  <input ref={resRef} type="text" autoComplete='off' className="form-control" id="exampleInputPassword1" />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="exampleInputPassword1" className="form-label">{Language[lang].Table.Img}</label>

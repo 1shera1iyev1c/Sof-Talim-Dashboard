@@ -16,11 +16,16 @@ export const Language = {
       Login: "Login",
       Pass: "Parol",
       Info: "Ma'lumot",
-      Tel: "Telefon raqam",
       CrAdmin: "Admin yaratish",
+      Img: "Rasm kiriting",
       CrTeacher: "Ustoz yaratish",
+      CrNews: "Yangilik qo'shish",
       Submit: "Jo'natish",
-      Close: "Yopish"
+      Close: "Yopish",
+      Title: "Yangilik sarlavhasi",
+      Success: "Muvaffaqiyati",
+      Direction: "Yo'nalish",
+      CrResult: "Yangilik yaratish",
     },
     coursTable: {
       
@@ -28,7 +33,7 @@ export const Language = {
       About: "Ma'lumot",
       Continuity: "Kurs davomiyligi",
       Price: "Kurs narxi",
-      CrAdmin: "Fan qoshish"
+      CrSub: "Fan qoshish"
       
     }
   },
@@ -49,11 +54,16 @@ export const Language = {
       Login: "Login",
       Pass: "Password",
       Info: "Information",
-      Tel: "Phone number",
       CrAdmin: "Create Admin",
+      CrNews: "Add News",
+      Img: "Enter a picture",
       CrTeacher: "Create Teacher",
       Submit: "Submit",
-      Close: "Close"
+      Close: "Close",
+      Title: "Title of news",
+      Success: "Success",
+      Direction: "Direction",
+      CrResult: "Create a result",
     },
     coursTable: {
       
@@ -61,7 +71,7 @@ export const Language = {
       About: "Information",
       Continuity: "Course duration",
       Price: "Cours price",
-      CrAdmin: "Add subject"
+      CrSub: "Add subject"
       
     }
   },
@@ -82,11 +92,16 @@ export const Language = {
       Login: "Логин",
       Pass: "Пароль",
       Info: "Информация",
-      Tel: "Номер телефона",
       CrAdmin: "Создать админ",
+      CrNews: "Добавить ",
+      Img: "Введите изображение",
       CrTeacher: "Создать учителя",
       Submit: "Отправить",
-      Close: "Закрывать"
+      Close: "Закрывать",
+      Title: "Заголовок новости",
+      Success: "Успех",
+      Direction: "Направление",
+      CrResult: "Создать результат",
     },
     coursTable: {
       
@@ -94,7 +109,7 @@ export const Language = {
       About: "Информация",
       Continuity: "Длительность курса",
       Price: "Стоимость курса",
-      CrAdmin: "Добавить предмет"
+      CrSub: "Добавить предмет"
       
     }
   },
