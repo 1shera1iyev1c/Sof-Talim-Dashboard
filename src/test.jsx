@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 export const test = () => {
-  useEffect(() => {});
+  useEffect();
 
   return <div>App</div>;
 };
