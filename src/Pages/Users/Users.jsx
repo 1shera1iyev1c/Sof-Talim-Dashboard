@@ -49,44 +49,12 @@ export function Users() {
                 <td>{user.id}. {user.ism}</td>
                 <td>{user.tel}</td>
                 <td>
-                  <button className="button">✏️</button>
                   <button className="button">🗑️</button>
                 </td>
               </tr>)}
             </tbody>
           }
         </table>
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-          {Language[lang].Table.CrUsers}
-        </button>
-      </div>
-
-
-      <div className="modal fade" id="exampleModal" tabIndex={"-1"} aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">{Language[lang].Table.CrUsers}</h1>
-              <button type="button" className="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div className="modal-body">
-              <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="exampleInputIsm" className="form-label">{Language[lang].Table.Name}</label>
-                  <input ref={ismRef} type="text" autoComplete='off' className="form-control" id="exampleInputIsm" aria-describedby="emailHelp" />
-                </div>
-                <div className="mb-3">
-                  <label htmlFor="exampleInputEmail1" className="form-label">{Language[lang].Table.Tel}</label>
-                  <input ref={telRef} type="text" autoComplete='off' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                </div>
-                <button type="submit" className="btn btn-primary">{Language[lang].Table.Submit}</button>
-              </form>
-            </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-success" data-bs-dismiss="modal">{Language[lang].Table.Close}</button>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   )
