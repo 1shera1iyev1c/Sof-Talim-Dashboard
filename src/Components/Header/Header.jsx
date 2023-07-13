@@ -39,8 +39,8 @@ export function Header() {
             </Link>
           </li>
           <li className="header__item">
-            <Link className={`header__link--${theme}`} to="/about">
-              {Language[lang].header.About}
+            <Link className={`header__link--${theme}`} to="/users">
+              {Language[lang].header.Users}
             </Link>
           </li>
           <li className="header__item">
@@ -75,7 +75,6 @@ export function Header() {
           >
             <option value="uzb">Uzbek</option>
             <option value="rus">Русский</option>
-            <option value="eng">English</option>
           </select>
           <select
             className="select2 form-select ms-2"
@@ -85,6 +84,7 @@ export function Header() {
             <option value="dark">{Language[lang].header.Dark}</option>
             <option value="light">{Language[lang].header.Light}</option>
           </select>
+          <button className="btn btn-danger mb-3 ms-3">Logout</button>
         </div>
         <button
           type="button"

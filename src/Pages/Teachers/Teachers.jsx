@@ -16,7 +16,9 @@ export function Teachers() {
   const [teachers, setTeachers] = useState([])
 
   const ismRef = useRef()
-  const subRef = useRef()
+  const espRef = useRef()
+  const expRef = useRef()
+  const imgRef = useRef()
   const infoRef = useRef()
 
   const handleSubmit = (evt) => {
@@ -25,12 +27,16 @@ export function Teachers() {
     const newTeacher = {
       id: teachers.at(0)?.id ? teachers.at(0)?.id + 1 : 1,
       ism: ismRef.current.value,
-      sub: subRef.current.value,
+      esp: espRef.current.value,
+      exp: expRef.current.value,
+      img: imgRef.current.value,
       info: infoRef.current.value,
     }
 
     ismRef.current.value = ""
-    subRef.current.value = ""
+    espRef.current.value = ""
+    expRef.current.value = ""
+    imgRef.current.value = ""
     infoRef.current.value = ""
 
     setTeachers([...teachers, newTeacher])
@@ -42,16 +48,25 @@ export function Teachers() {
           <thead>
             <tr>
               <th>{Language[lang].Table.Name}</th>
-              <th>{Language[lang].Table.Subject}</th>
+              <th>{Language[lang].Table.Specialty}</th>
+              <th>{Language[lang].Table.Experience}</th>
               <th>{Language[lang].Table.Info}</th>
+              <th>{Language[lang].Table.Image}</th>
+              <th>{Language[lang].Table.Settings}</th>
             </tr>
           </thead>
           {
             teachers.length > 0 && <tbody>
               {teachers.map(teacher => <tr key={teacher.id}>
                 <td>{teacher.id}. {teacher.ism}</td>
-                <td>{teacher.sub}</td>
+                <td>{teacher.esp}</td>
+                <td>{teacher.exp}</td>
                 <td>{teacher.info}</td>
+                <td>{teacher.img}</td>
+                <td>
+                  <button className="button">✏️</button>
+                  <button className="button">🗑️</button>
+                </td>
               </tr>)}
             </tbody>
           }
@@ -76,8 +91,12 @@ export function Teachers() {
                   <input ref={ismRef} type="text" autoComplete='off' className="form-control" id="exampleInputIsm" aria-describedby="emailHelp" />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="exampleInputEmail1" className="form-label">{Language[lang].Table.Subject}</label>
-                  <input ref={subRef} type="text" autoComplete='off' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                  <label htmlFor="exampleInputEmail1" className="form-label">{Language[lang].Table.Specialty}</label>
+                  <input ref={espRef} type="text" autoComplete='off' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                </div>
+                <div className="mb-3">
+                  <label htmlFor="exampleInputEmail1" className="form-label">{Language[lang].Table.Experience}</label>
+                  <input ref={expRef} type="text" autoComplete='off' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
                 </div>
                 <div className="mb-3">
                   <label htmlFor="exampleInputPassword1" className="form-label">{Language[lang].Table.Info}</label>
@@ -85,7 +104,7 @@ export function Teachers() {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="exampleInputPassword1" className="form-label">{Language[lang].Table.Img}</label>
-                  <input type="file" autoComplete='off' className="form-control" id="exampleInputPassword1" />
+                  <input ref={imgRef} type="file" autoComplete='off' className="form-control" id="exampleInputPassword1" />
                 </div>
                 <button type="submit" className="btn btn-primary">{Language[lang].Table.Submit}</button>
               </form>

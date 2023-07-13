@@ -17,6 +17,7 @@ export function News() {
 
   const ismRef = useRef()
   const infoRef = useRef()
+  const imgRef = useRef()
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
@@ -25,9 +26,11 @@ export function News() {
       id: news.at(0)?.id ? news.at(0)?.id + 1 : 1,
       ism: ismRef.current.value,
       info: infoRef.current.value,
+      img: imgRef.current.value,
     }
 
     ismRef.current.value = ""
+    imgRef.current.value = ""
     infoRef.current.value = ""
 
     setNews([...news, newNews])
@@ -40,6 +43,8 @@ export function News() {
             <tr>
               <th>{Language[lang].Table.Title}</th>
               <th>{Language[lang].Table.Info}</th>
+              <th>{Language[lang].Table.Image}</th>
+              <th>{Language[lang].Table.Settings}</th>
             </tr>
           </thead>
           {
@@ -47,6 +52,11 @@ export function News() {
               {news.map(item => <tr key={item.id}>
                 <td>{item.id}. {item.ism}</td>
                 <td>{item.info}</td>
+                <td>{item.img}</td>
+                <td>
+                  <button className="button">✏️</button>
+                  <button className="button">🗑️</button>
+                </td>
               </tr>)}
             </tbody>
           }
@@ -61,7 +71,7 @@ export function News() {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">{Language[lang].Table.CrTeacher}</h1>
+              <h1 className="modal-title fs-5" id="exampleModalLabel">{Language[lang].Table.CrNews}</h1>
               <button type="button" className="btn-close me-3" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
@@ -76,7 +86,7 @@ export function News() {
                 </div>
                 <div className="mb-3">
                   <label htmlFor="exampleInputPassword1" className="form-label">{Language[lang].Table.Img}</label>
-                  <input type="file" autoComplete='off' className="form-control" id="exampleInputPassword1" />
+                  <input ref={imgRef} type="file" autoComplete='off' className="form-control" id="exampleInputPassword1" />
                 </div>
                 <button type="submit" className="btn btn-primary">{Language[lang].Table.Submit}</button>
               </form>
