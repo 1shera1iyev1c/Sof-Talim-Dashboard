@@ -37,7 +37,7 @@ export const Dashboard = () => {
             <input
               ref={emailRef}
               type="text"
-              placeholder="Name"
+              placeholder="Admin Name"
               className="text__input d-block form-control"
             />
             <input

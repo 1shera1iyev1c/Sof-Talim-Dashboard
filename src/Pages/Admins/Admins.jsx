@@ -46,7 +46,7 @@ export function Admins() {
         <table id="customers">
           <thead>
             <tr>
-              <th>{Language[lang].Table.Name}</th>
+             
               <th>{Language[lang].Table.Login}</th>
               <th>{Language[lang].Table.Pass}</th>
             </tr>
@@ -97,20 +97,7 @@ export function Admins() {
             </div>
             <div className="modal-body">
               <form onSubmit={handleSubmit}>
-                <div className="mb-3">
-                  <label htmlFor="exampleInputIsm" className="form-label">
-                    {Language[lang].Table.Name}
-                  </label>
-                  <input
-                    required
-                    ref={ismRef}
-                    type="text"
-                    autoComplete="off"
-                    className="form-control"
-                    id="exampleInputIsm"
-                    aria-describedby="emailHelp"
-                  />
-                </div>
+                
                 <div className="mb-3">
                   <label htmlFor="exampleInputEmail1" className="form-label">
                     {Language[lang].Table.Login}

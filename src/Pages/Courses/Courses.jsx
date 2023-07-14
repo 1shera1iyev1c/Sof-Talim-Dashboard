@@ -48,7 +48,6 @@ export const Courses = () => {
             <tr>
               <th>{Language[lang].coursTable.Subject}</th>
               <th>{Language[lang].coursTable.About}</th>
-              <th>{Language[lang].coursTable.Continuity}</th>
               <th>{Language[lang].coursTable.Price}</th>
             </tr>
           </thead>
@@ -87,13 +86,14 @@ export const Courses = () => {
                   <input required ref={aboutRef} type="text" autoComplete='off' className="form-control" id="exampleInputIsm" aria-describedby="emailHelp" />
                 </div>
                 <div className="mb-3">
-                  <label htmlFor="exampleInputEmail1" className="form-label">{Language[lang].coursTable.Continuity}</label>
-                  <input required ref={loginRef} type="text" autoComplete='off' className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                </div>
-                <div className="mb-3">
                   <label htmlFor="exampleInputPassword1" className="form-label">{Language[lang].coursTable.Price}</label>
                   <input required ref={passRef} type="text" autoComplete='off' className="form-control" id="exampleInputPassword1" />
                 </div>
+                <div className="mb-3">
+                  <label htmlFor="exampleInputPassword1" className="form-label">{Language[lang].Table.Img}</label>
+                  <input type="file" autoComplete='off' className="form-control" id="exampleInputPassword1" />
+                </div>
+                
                 <button type="submit" className="btn btn-primary">{Language[lang].Table.Submit}</button>
               </form>
             </div>
